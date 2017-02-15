@@ -18,11 +18,12 @@ namespace MyFirstApp
 
         public Triangle(Point Point1, Point Point2, Point Point3)
         {
+            
+
             this.Point1 = Point1;
             this.Point2 = Point2;
             this.Point3 = Point3;
 
-            //check
 
             var Edge1 = new Edge(Point1, Point2);
             var Edge2 = new Edge(Point1, Point3);
@@ -34,13 +35,12 @@ namespace MyFirstApp
 
         }
 
-        public bool CheckForCorrect()
+        private bool checkForCorrect()
         {
-            if (Edge1 + Edge2 <= Edge3 ||
+           return (Edge1 + Edge2 <= Edge3 ||
                 Edge1 + Edge3 <= Edge2 ||
-                Edge2 + Edge3 <= Edge1)
-                return false;
-            else return true;
+                Edge2 + Edge3 <= Edge1);
+
         }
 
         public double Perimeter
@@ -61,28 +61,27 @@ namespace MyFirstApp
                                 (p - Edge2) * (p - Edge3));
             }
         }
+        public bool Squareness
+        {    
+            get
+            {           
+                var squareEdge1 = Edge1 * Edge1;
+                var squareEdge2 = Edge2 * Edge2;
+                var squareEdge3 = Edge3 * Edge3;
 
-        public bool CheckTriangleForSquareness()//get
-        {
-            var squareOfFirstEdge = Edge1 * Edge1;
-            var squareOfSecondEdge = Edge2 * Edge2;
-            var squareOfThirdEdge = Edge3 * Edge3;
-
-            return(squareOfFirstEdge + squareOfSecondEdge == squareOfThirdEdge ||
-                squareOfFirstEdge + squareOfThirdEdge == squareOfSecondEdge ||
-                squareOfSecondEdge + squareOfThirdEdge == squareOfFirstEdge);
-                
+                return (squareEdge1 + squareEdge2 == squareEdge3 ||
+                        squareEdge1 + squareEdge3 == squareEdge2 ||
+                        squareEdge2 + squareEdge3 == squareEdge1); 
+            }            
         }
-
-        public bool CheckTriangleForIsosceles()//get
+        public bool Isosceles
         {
-            if (Edge1 == Edge2 ||
-                Edge1 == Edge3 ||
-                Edge2 == Edge3)
-                return true;
-            else return false;
+            get
+            {
+                return (Edge1 == Edge2 ||
+                        Edge1 == Edge3 ||
+                        Edge2 == Edge3);
+            }
         }
-
-
     }
 }

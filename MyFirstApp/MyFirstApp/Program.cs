@@ -23,6 +23,7 @@ namespace MyFirstApp
                     var point1 = new Point(rand.Next(0,10), rand.Next(0,10));
                     var point2 = new Point(rand.Next(0,10), rand.Next(0,10));
                     var point3 = new Point(rand.Next(0,10), rand.Next(0,10));
+
                     arrayOfTriangle[i] = new Triangle(point1, point2, point3);
                     //exception in constructor
                     if (arrayOfTriangle[i].CheckForCorrect()) flag = true;
@@ -35,17 +36,17 @@ namespace MyFirstApp
 
             for (i = 0; i < amountTriangle; i++)
             {
-                Console.WriteLine(arrayOfTriangle[i].GetPerimeter());
-                if(arrayOfTriangle[i].CheckTriangleForSquareness())
+                Console.WriteLine(arrayOfTriangle[i].Perimeter);
+                if(arrayOfTriangle[i].Squareness)
                 {
                     countRightTriangle ++;
-                    perimeterOfRight += arrayOfTriangle[i].GetPerimeter();
+                    perimeterOfRight += arrayOfTriangle[i].Perimeter;
                 }
 
-                if(arrayOfTriangle[i].CheckTriangleForIsosceles())
+                if(arrayOfTriangle[i].Isosceles)
                 {
                     countIsoscelesTriangle ++;
-                    areaOfIsosceles += arrayOfTriangle[i].GetArea();
+                    areaOfIsosceles += arrayOfTriangle[i].Area;
                 }
 
             }
