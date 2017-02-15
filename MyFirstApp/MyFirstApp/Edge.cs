@@ -20,8 +20,8 @@ namespace MyFirstApp
        {
            get
            {
-               return Math.Sqrt((point1.x - point2.x) * (point1.x - point2.x) +
-                               (point1.y - point2.y) * (point1.y - point2.y));
+               return Math.Sqrt((point1.X - point2.X) * (point1.X - point2.X) +
+                               (point1.Y - point2.Y) * (point1.Y - point2.Y));
            }
        }
 

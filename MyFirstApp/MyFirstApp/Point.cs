@@ -8,12 +8,12 @@ namespace MyFirstApp
 {
     class Point
     {
-        public readonly int x,y;
+        public readonly int X,Y;
 
-        public  Point(int x, int y)
+        public  Point(int X, int Y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = X;
+            this.Y = Y;
         }
 
         ~Point()

@@ -24,13 +24,13 @@ namespace MyFirstApp
 
             //check
 
-            var firstEdge = new Edge(Point1, Point2);
-            var secondEdge = new Edge(Point1, Point3);
-            var thirdEdge = new Edge(Point2, Point3);
+            var Edge1 = new Edge(Point1, Point2);
+            var Edge2 = new Edge(Point1, Point3);
+            var Edge3 = new Edge(Point2, Point3);
 
-            this.Edge1 = firstEdge.Length;
-            this.Edge2 = secondEdge.Length;
-            this.Edge3 = thirdEdge.Length;
+            this.Edge1 = Edge1.Length;
+            this.Edge2 = Edge2.Length;
+            this.Edge3 = Edge3.Length;
 
         }
 
@@ -43,17 +43,23 @@ namespace MyFirstApp
             else return true;
         }
 
-        public double GetPerimeter()//get
+        public double Perimeter
         {
-            return Edge1 + Edge2 + Edge3;
+            get
+            {
+                return Edge1 + Edge2 + Edge3;
+            }
         }
 
-        public double GetArea()//get
+        public double Area
         {
-            var halfPerimeter = GetPerimeter() / 2;
+            get
+            {
+                var p = Perimeter / 2;
 
-            return Math.Sqrt(halfPerimeter * (halfPerimeter - Edge1) * 
-                            (halfPerimeter - Edge2) * (halfPerimeter - Edge3));
+                return Math.Sqrt(p * (p - Edge1) * 
+                                (p - Edge2) * (p - Edge3));
+            }
         }
 
         public bool CheckTriangleForSquareness()//get
