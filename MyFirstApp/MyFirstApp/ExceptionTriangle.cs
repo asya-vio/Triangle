@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace MyFirstApp
 {
-    public class ExceptionTriangle : ApplicationException
+    public class TriangleException : Exception
     {
-        public ExceptionTriangle() { }
+        public TriangleException()
+            : base()
+        { 
+
+        }
 
     }
 }

@@ -35,7 +35,7 @@ namespace MyFirstApp
 
         }
 
-        private bool checkForCorrect()
+        public bool checkForCorrect()
         {
            return (Edge1 + Edge2 <= Edge3 ||
                 Edge1 + Edge3 <= Edge2 ||
@@ -56,9 +56,9 @@ namespace MyFirstApp
             get
             {
                 var p = Perimeter / 2;
-
-                return Math.Sqrt(p * (p - Edge1) * 
+                var ar = Math.Sqrt(p * (p - Edge1) * 
                                 (p - Edge2) * (p - Edge3));
+                return ar;
             }
         }
         public bool Squareness
