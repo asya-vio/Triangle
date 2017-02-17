@@ -15,10 +15,5 @@ namespace MyFirstApp
             this.X = X;
             this.Y = Y;
         }
-
-        ~Point()
-        {
-
-        }
     }
 }

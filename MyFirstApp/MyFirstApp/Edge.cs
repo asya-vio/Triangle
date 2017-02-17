@@ -8,22 +8,23 @@ namespace MyFirstApp
 {
     class Edge
     {
-      private Point point1;
-      private Point point2;
+      public Point Point1;
+      public Point Point2;
 
-       public Edge(Point point1, Point point2)
+       public Edge(Point Point1, Point Point2)
        {
-           this.point1 = point1;
-           this.point2 = point2;
+           this.Point1 = Point1;
+           this.Point2 = Point2;
        }
        public double Length
        {
            get
            {
-               return Math.Sqrt((point1.X - point2.X) * (point1.X - point2.X) +
-                               (point1.Y - point2.Y) * (point1.Y - point2.Y));
+               return Math.Sqrt((Point1.X - Point2.X) * (Point1.X - Point2.X) +
+                               (Point1.Y - Point2.Y) * (Point1.Y - Point2.Y));
            }
        }
+
 
     }
 }

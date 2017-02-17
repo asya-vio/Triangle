@@ -33,13 +33,21 @@ namespace MyFirstApp
             this.Edge2 = Edge2.Length;
             this.Edge3 = Edge3.Length;
 
+            if (IsInvalid)
+            {
+                throw new Exception();
+            }
+
         }
 
-        public bool checkForCorrect()
+        private bool IsInvalid
         {
-           return (Edge1 + Edge2 <= Edge3 ||
-                Edge1 + Edge3 <= Edge2 ||
-                Edge2 + Edge3 <= Edge1);
+            get
+            {
+                return (Edge1 + Edge2 <= Edge3 ||
+                     Edge1 + Edge3 <= Edge2 ||
+                     Edge2 + Edge3 <= Edge1);
+            }
 
         }
 

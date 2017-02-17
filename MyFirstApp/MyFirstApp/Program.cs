@@ -9,27 +9,34 @@ namespace MyFirstApp
 {        
     class Program
     {
-        const int amountTriangle = 20;
+        const int amountTriangle = 10;
         static void Main(string[] args)
         {
-            var arrayOfTriangle = new Triangle [amountTriangle]; 
-            
+            var arrayOfTriangle = new Triangle [amountTriangle];
+            Random rand1 = new Random(1);
+            Random rand2 = new Random(2);
             int i = 0;
             while (i < amountTriangle)
             {   
                 bool flag = false;
                 while (!flag)
                 {
-                    Random rand = new Random();
-                    var point1 = new Point(rand.Next(0,5), rand.Next(0,5));
-                    Thread.Sleep(10);
-                    var point2 = new Point(rand.Next(0,5), rand.Next(0,5));
-                    Thread.Sleep(10);
-                    var point3 = new Point(rand.Next(0,5), rand.Next(0,5));
 
-                    arrayOfTriangle[i] = new Triangle(point1, point2, point3);
-                    //exception in constructor
-                    if (arrayOfTriangle[i].checkForCorrect()) flag = true;
+                    var point1 = new Point(rand1.Next(0,11), rand2.Next(0,11));                    
+                  
+                    var point2 = new Point(rand1.Next(0,11), rand2.Next(0,11));
+                    
+                    var point3 = new Point(rand1.Next(0,11), rand2.Next(0,11));
+
+                    try
+                    {
+                        arrayOfTriangle[i] = new Triangle(point1, point2, point3);
+                        flag = true;
+                    }
+                    catch(Exception)
+                    {
+
+                    }
                 }
                 i++;
             }
