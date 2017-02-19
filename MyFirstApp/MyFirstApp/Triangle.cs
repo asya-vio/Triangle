@@ -25,17 +25,17 @@ namespace MyFirstApp
             this.Point3 = Point3;
 
 
-            var Edge1 = new Edge(Point1, Point2);
-            var Edge2 = new Edge(Point1, Point3);
-            var Edge3 = new Edge(Point2, Point3);
+            var edge1 = new Edge(Point1, Point2);
+            var edge2 = new Edge(Point1, Point3);
+            var edge3 = new Edge(Point2, Point3);
 
-            this.Edge1 = Edge1.Length;
-            this.Edge2 = Edge2.Length;
-            this.Edge3 = Edge3.Length;
+            this.Edge1 = edge1.Length;
+            this.Edge2 = edge2.Length;
+            this.Edge3 = edge3.Length;
 
             if (IsInvalid)
             {
-                throw new Exception();
+                throw new ArgumentException();
             }
 
         }
@@ -64,12 +64,10 @@ namespace MyFirstApp
             get
             {
                 var p = Perimeter / 2;
-                var ar = Math.Sqrt(p * (p - Edge1) * 
-                                (p - Edge2) * (p - Edge3));
-                return ar;
+                return Math.Sqrt(p * (p - Edge1) * (p - Edge2) * (p - Edge3));
             }
         }
-        public bool Squareness
+        public bool IsRight
         {    
             get
             {           
@@ -82,7 +80,7 @@ namespace MyFirstApp
                         squareEdge2 + squareEdge3 == squareEdge1); 
             }            
         }
-        public bool Isosceles
+        public bool IsIsosceles
         {
             get
             {

@@ -10,30 +10,52 @@ namespace MyFirstApp
     class Program
     {
         const int amountTriangle = 10;
-        static void Main(string[] args)
+        static void Main()
         {
-            var arrayOfTriangle = new Triangle [amountTriangle];
+
+            int amountTriangle = 0;
+            Console.WriteLine("Input number of triangles");
+
+            try
+            {
+                amountTriangle = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("It's not a number\n");
+                Main();
+            }
+
+            var arrayOfTriangle = new ArrayTriangle(amountTriangle);
+
+
+
+            //var arrayTriangle = new Triangle [amountTriangle];
+            /*Triangle[] arrayTriangle;
+
+
+
             Random rand1 = new Random(1);
             Random rand2 = new Random(2);
             int i = 0;
             while (i < amountTriangle)
-            {   
+            {
                 bool flag = false;
                 while (!flag)
                 {
 
-                    var point1 = new Point(rand1.Next(0,11), rand2.Next(0,11));                    
-                  
-                    var point2 = new Point(rand1.Next(0,11), rand2.Next(0,11));
-                    
-                    var point3 = new Point(rand1.Next(0,11), rand2.Next(0,11));
+                    var point1 = new Point(rand1.Next(0, 11), rand2.Next(0, 11));
+
+                    var point2 = new Point(rand1.Next(0, 11), rand2.Next(0, 11));
+
+                    var point3 = new Point(rand1.Next(0, 11), rand2.Next(0, 11));
 
                     try
                     {
-                        arrayOfTriangle[i] = new Triangle(point1, point2, point3);
+                        arrayTriangle[i] = new Triangle(point1, point2, point3);
                         flag = true;
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
 
                     }
@@ -46,17 +68,17 @@ namespace MyFirstApp
 
             for (i = 0; i < amountTriangle; i++)
             {
-                Console.WriteLine(arrayOfTriangle[i].Area);
-                if(arrayOfTriangle[i].Squareness)
+                Console.WriteLine(arrayTriangle[i].Area);
+                if (arrayTriangle[i].IsSquareness)
                 {
-                    countRight ++;
-                    perimeterOfRight += arrayOfTriangle[i].Perimeter;
+                    countRight++;
+                    perimeterOfRight += arrayTriangle[i].Perimeter;
                 }
 
-                if(arrayOfTriangle[i].Isosceles)
+                if (arrayTriangle[i].IsIsosceles)
                 {
-                    countIsosceles ++;
-                    areaOfIsosceles += arrayOfTriangle[i].Area;
+                    countIsosceles++;
+                    areaOfIsosceles += arrayTriangle[i].Area;
                 }
 
             }
@@ -67,7 +89,7 @@ namespace MyFirstApp
 
             if (countIsosceles != 0)
                 Console.WriteLine("Average area of isosceles triangles = " + areaOfIsosceles / countIsosceles);
-            else Console.WriteLine("No isosceles triangles");
+            else Console.WriteLine("No isosceles triangles");*/
         }
     }
 }
