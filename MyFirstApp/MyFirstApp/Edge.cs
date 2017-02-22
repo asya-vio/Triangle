@@ -8,8 +8,8 @@ namespace MyFirstApp
 {
     class Edge
     {
-      public Point Point1;
-      public Point Point2;
+      public readonly Point Point1;
+      public readonly Point Point2;
 
        public Edge(Point Point1, Point Point2)
        {
@@ -25,6 +25,15 @@ namespace MyFirstApp
            }
        }
 
+        public static bool operator == (Edge edge1, Edge edge2)
+        {
+            return edge1.Length == edge2.Length;
+        }
+
+        public static bool operator != (Edge edge1, Edge edge2)
+        {
+            return edge1.Length != edge2.Length;
+        }
 
     }
 }

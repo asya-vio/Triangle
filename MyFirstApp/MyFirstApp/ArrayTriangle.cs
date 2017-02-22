@@ -22,6 +22,7 @@ namespace MyFirstApp
             while (i < numberTriangle)
             {
                 bool flag = true;
+
                 while (flag)
                 {
                     var point1 = new Point(rand1.Next(-5, 6), rand2.Next(-5, 6));
@@ -33,10 +34,7 @@ namespace MyFirstApp
                         ArrTriangle.Add(new Triangle(point1, point2, point3));
                         flag = false;
                     }
-                    catch (ArgumentException)
-                    {
-
-                    }
+                    catch (ArgumentException) {}
                 }
                 i++;
             }
@@ -76,7 +74,7 @@ namespace MyFirstApp
                     if (ArrTriangle[i].IsRight)
                     {
                         perimeter += ArrTriangle[i].Perimeter;
-                    }                        
+                    }                      
                 return perimeter;
             }
         }
@@ -90,7 +88,7 @@ namespace MyFirstApp
                     if (ArrTriangle[i].IsIsosceles)
                     {
                         area += ArrTriangle[i].Area;
-                    }                       
+                    }                      
                 return area;
             }
         }
